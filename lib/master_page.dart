@@ -7,8 +7,9 @@ class MasterPage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      
       body: Center(child: ElevatedButton(
-        child: Text("Finding People"),
+        child: Text("welcome to homepage"),
         onPressed: (){
           nextScreen(context, Homepage());
         },
