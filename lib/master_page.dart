@@ -1,5 +1,5 @@
-import 'package:chatme/pages/homepage.dart';
-import 'package:chatme/pages/medication_reminder.dart';
+import 'package:chatme/pages/finding_people/homepage.dart';
+import 'package:chatme/pages/Medication/medication_reminder.dart';
 import 'package:chatme/service/auth_service.dart';
 import 'package:chatme/service/database_service.dart';
 import 'package:chatme/shared/constant.dart';
@@ -60,7 +60,7 @@ class _MasterPageState extends State<MasterPage> {
 
       appBar: AppBar(
         leading: Image.asset("assets/images/leading.jpg"),
-        title: Text("Hii ${userName}",style:
+        title: Text("Hii ${userName} 👋🏻",style:
         TextStyle(color: Color(0xFF432c81),fontWeight: FontWeight.w500)),
 
       ),
@@ -69,8 +69,8 @@ class _MasterPageState extends State<MasterPage> {
           child: Column(
             children: [
               InkWell(
-                onTap: (){
-                  nextScreen(context, MedicationReminder());
+                onTap: ()async{
+                  nextScreen(context, const MedicationReminder());
                 },
                 child: Container(
                  margin: EdgeInsets.only(top: 16,left: 20,right: 16),
@@ -86,7 +86,7 @@ class _MasterPageState extends State<MasterPage> {
                       Container(
                         width :183,
                         height: 72,
-                        child: Text("Medication Remainder",textAlign: TextAlign.center,style:
+                        child: Text("Medication Reminder",textAlign: TextAlign.center,style:
                         TextStyle(color: Constants().textColor,fontWeight: FontWeight.w500,fontSize:20 ),),
                       ),
                       Expanded(child: Image.asset("assets/images/medical1.png")),

@@ -69,7 +69,7 @@ class _ChatPageState extends State<ChatPage> {
           chatMessages(),
           Container(
             alignment: Alignment.bottomCenter,
-          width: MediaQuery.of(context).size.width,
+            width: MediaQuery.of(context).size.width,
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 18,horizontal: 20),
               width: MediaQuery.of(context).size.width,

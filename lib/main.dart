@@ -45,6 +45,20 @@ class _MyAppState extends State<MyApp> {
 
         primaryColor: Constants().primaryColor,
         scaffoldBackgroundColor: Colors.white,
+        timePickerTheme: TimePickerThemeData(
+          backgroundColor:Colors.white,
+          dayPeriodColor: Constants().textColor,
+          dayPeriodTextColor: Colors.white,
+          hourMinuteColor: Constants().textColor,
+          hourMinuteTextColor: Colors.white,
+          dialBackgroundColor: Constants().textColor,
+          dialHandColor: Colors.cyan,
+          dialTextColor: Colors.white,
+          entryModeIconColor: Colors.cyan,
+          
+          
+
+        )
       ),
      debugShowCheckedModeBanner: false,
       home:_isSignedIn ? MasterPage(): Loginpage(),
