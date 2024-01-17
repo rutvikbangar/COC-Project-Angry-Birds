@@ -1,5 +1,8 @@
+import 'package:chatme/pages/Notes/Notes_mainpage.dart';
+import 'package:chatme/pages/SOS/sospage.dart';
 import 'package:chatme/pages/homepage.dart';
 import 'package:chatme/pages/medication_reminder.dart';
+import 'package:chatme/pages/setting.dart';
 import 'package:chatme/service/auth_service.dart';
 import 'package:chatme/service/database_service.dart';
 import 'package:chatme/shared/constant.dart';
@@ -101,6 +104,7 @@ class _MasterPageState extends State<MasterPage> {
               InkWell(
                 onTap: (){
                   //For SOS
+                  nextScreen(context, SosPage());
                 },
                 child: Container(
                     margin: EdgeInsets.only(left: 20,right: 16),
@@ -191,6 +195,7 @@ class _MasterPageState extends State<MasterPage> {
               InkWell(
                 onTap: (){
                   //For Notes
+                    nextScreen(context, NotesPage());
                 },
                 child: Container(
                     margin: EdgeInsets.only(left: 20,right: 16),
@@ -207,7 +212,7 @@ class _MasterPageState extends State<MasterPage> {
                           width :183,
                           height: 40,
                           child: Text("Notes",textAlign: TextAlign.center,style:
-                          TextStyle(color: Constants().textColor,fontWeight: FontWeight.w500,fontSize:20 ),),
+                          TextStyle(color: Constants().textColor,fontWeight: FontWeight.w600,fontSize:20 ),),
                         ),
                         Expanded(child: Image.asset("assets/images/notes.jpg"))
                       ],
@@ -228,9 +233,17 @@ class _MasterPageState extends State<MasterPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Icon(Icons.home,size:30,color: Constants().textColor,),
-              Icon(Icons.notifications,size: 30,color: Color(0xFFA095C1)),
-              Icon(Icons.settings,size: 30,color: Color(0xFFA095C1))
+              IconButton(
+                onPressed: (){},
+                icon: Icon(Icons.home,size:30,color: Constants().textColor)),
+
+              IconButton(
+                  onPressed: (){},
+                  icon : Icon(Icons.notifications,size: 30,color: Color(0xFFA095C1))),
+
+
+               IconButton( onPressed: (){nextScreen(context, SettingPage());},
+                icon: Icon( Icons.settings,size: 30,color: Color(0xFFA095C1),))
 
             ],
           ),
