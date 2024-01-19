@@ -90,7 +90,7 @@ class _MasterPageState extends State<MasterPage> {
                         width :183,
                         height: 72,
                         child: Text("Medication Remainder",textAlign: TextAlign.center,style:
-                        TextStyle(color: Constants().textColor,fontWeight: FontWeight.w500,fontSize:20 ),),
+                        TextStyle(color: Constants().textColor,fontWeight: FontWeight.w600,fontSize:20 ),),
                       ),
                       Expanded(child: Image.asset("assets/images/medical1.png")),
 
@@ -121,7 +121,7 @@ class _MasterPageState extends State<MasterPage> {
                           width :183,
                           height: 40,
                           child: Text("SOS",textAlign: TextAlign.center,style:
-                          TextStyle(color: Constants().textColor,fontWeight: FontWeight.w500,fontSize:20 ),),
+                          TextStyle(color: Constants().textColor,fontWeight: FontWeight.w600,fontSize:20 ),),
                         ),
                         Expanded(child: Image.asset("assets/images/SOS.jpg"))
                       ],
@@ -150,7 +150,7 @@ class _MasterPageState extends State<MasterPage> {
                           width :183,
                           height: 40,
                           child: Text("Locator",textAlign: TextAlign.center,style:
-                          TextStyle(color: Constants().textColor,fontWeight: FontWeight.w500,fontSize:20 ),),
+                          TextStyle(color: Constants().textColor,fontWeight: FontWeight.w600,fontSize:20 ),),
                         ),
                         Expanded(child: Image.asset("assets/images/locator.jpg")),
 
@@ -183,7 +183,7 @@ class _MasterPageState extends State<MasterPage> {
                           width :183,
                           height: 40,
                           child: Text("Finding People",textAlign: TextAlign.center,style:
-                          TextStyle(color: Constants().textColor,fontWeight: FontWeight.w500,fontSize:20 ),),
+                          TextStyle(color: Constants().textColor,fontWeight: FontWeight.w600,fontSize:20 ),),
                         ),
                         Expanded(child: Image.asset("assets/images/people.jpg")),
                       ],

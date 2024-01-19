@@ -7,6 +7,7 @@ class DatabaseService {
   //reference of our collection
   final CollectionReference userCollection = FirebaseFirestore.instance.collection("users");
   final CollectionReference groupsCollection = FirebaseFirestore.instance.collection("groups");
+  final CollectionReference notesCollection = FirebaseFirestore.instance.collection("notes");
 
 
   //update the userdata
@@ -17,7 +18,7 @@ Future updateUserData(String fullname,String email) async {
     "groups" : [],
     "profilepic" : "",
     "uid" : uid,
-    "notes" :[],
+    "notes" : [],
   });
 
 }
@@ -31,6 +32,34 @@ Future gettingUserData(String email) async {
  getUserGroups() async {
   return userCollection.doc(uid).snapshots();
  }
+
+
+ // getting user notes
+  getUserNotes() async {
+    return userCollection.doc(uid).snapshots();
+  }
+
+
+ //Creating a note
+ Future createNotes(String userName,String id, String title,String detailnotes) async {
+  DocumentReference notesDocumentReference = await notesCollection.add({
+    "title" : title,
+    "notesowner" : "${id}_$userName",
+    "detailnotes" : detailnotes,
+    "notesid" : ""
+  });
+  await notesDocumentReference.update({
+    "notesid" : notesDocumentReference.id,
+  });
+  //updating notes in user
+  DocumentReference userDocumentReference = userCollection.doc(uid);
+  return await userDocumentReference.update({
+    "notes" : FieldValue.arrayUnion(["${notesDocumentReference.id}_${title}_$detailnotes"])
+  });
+
+
+ }
+
 
  // Creating a group
   Future createGroup(String userName,String id, String groupName) async {
@@ -122,6 +151,37 @@ Future toggleGroupJoin(String groupId,String userName,String groupName) async {
 
   });
   }
+
+
+
+
+  // deleting notes
+
+
+  Future deletenotesfromnotes(String id) async {
+  FirebaseFirestore.instance.collection("notes").doc(id).delete();
+
+  }
+
+  Future deletenotesfromuser(String notesid,String title,String detailnotes ) async{
+    DocumentReference userDocumentReference = userCollection.doc(uid);
+
+
+
+    DocumentSnapshot documentSnapshot = await userDocumentReference.get();
+    List<dynamic> notes = await documentSnapshot['notes'];
+
+    if(notes.contains("${notesid}_${title}_$detailnotes")){
+      await userDocumentReference.update({
+        "notes" : FieldValue.arrayRemove(["${notesid}_${title}_$detailnotes"])
+      });
+
+    }
+
+
+
+  }
+
 
 }
 
