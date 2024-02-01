@@ -1,4 +1,4 @@
-import 'package:chatme/pages/groupinfo.dart';
+import 'package:chatme/pages/finding_people/groupinfo.dart';
 import 'package:chatme/service/database_service.dart';
 import 'package:chatme/widgets/messagetile.dart';
 import 'package:chatme/widgets/widget.dart';

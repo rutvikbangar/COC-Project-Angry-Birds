@@ -1,9 +1,9 @@
-import 'package:chatme/pages/homepage.dart';
+import 'package:chatme/pages/finding_people/homepage.dart';
 import 'package:chatme/widgets/widget.dart';
 import 'package:flutter/material.dart';
 
-import '../service/auth_service.dart';
-import 'auth/loginpage.dart';
+import '../../service/auth_service.dart';
+import '../auth/loginpage.dart';
 
 class ProfilePage extends StatefulWidget{
   String userName;

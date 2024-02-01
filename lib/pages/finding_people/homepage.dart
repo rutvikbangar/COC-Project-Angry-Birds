@@ -1,7 +1,7 @@
 import 'package:chatme/helper/helper_function.dart';
 import 'package:chatme/pages/auth/loginpage.dart';
-import 'package:chatme/pages/profilepage.dart';
-import 'package:chatme/pages/searchpage.dart';
+import 'package:chatme/pages/finding_people/profilepage.dart';
+import 'package:chatme/pages/finding_people/searchpage.dart';
 import 'package:chatme/service/auth_service.dart';
 import 'package:chatme/service/database_service.dart';
 import 'package:chatme/widgets/grouptile.dart';

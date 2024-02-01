@@ -1,13 +1,13 @@
 import 'package:chatme/master_page.dart';
-import 'package:chatme/pages/homepage.dart';
-import 'package:chatme/pages/profilepage.dart';
+import 'package:chatme/pages/finding_people/homepage.dart';
+import 'package:chatme/pages/finding_people/profilepage.dart';
 import 'package:chatme/widgets/widget.dart';
 import 'package:flutter/material.dart';
 
-import '../helper/helper_function.dart';
-import '../service/auth_service.dart';
-import '../shared/constant.dart';
-import 'auth/loginpage.dart';
+import '../../helper/helper_function.dart';
+import '../../service/auth_service.dart';
+import '../../shared/constant.dart';
+import '../auth/loginpage.dart';
 
 class SettingPage extends StatefulWidget{
 

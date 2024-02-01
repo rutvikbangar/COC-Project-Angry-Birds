@@ -1,4 +1,4 @@
-import 'package:chatme/pages/homepage.dart';
+import 'package:chatme/pages/finding_people/homepage.dart';
 import 'package:chatme/widgets/widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

@@ -27,3 +27,7 @@ void showSnackbar(context, color, message){
      backgroundColor: color,duration: Duration(seconds: 2),
      action : SnackBarAction(label: "ok", onPressed:(){},)));
 }
+class routes{
+  static String medicationRoute = "/medication";
+
+}

@@ -1,6 +1,6 @@
 import 'package:chatme/widgets/widget.dart';
 import 'package:flutter/material.dart';
-import '../pages/chatpage.dart';
+import '../pages/finding_people/chatpage.dart';
 
 class GroupTile extends StatefulWidget{
   final String userName;

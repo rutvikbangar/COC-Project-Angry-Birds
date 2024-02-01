@@ -1,7 +1,7 @@
 import 'package:chatme/helper/helper_function.dart';
 import 'package:chatme/master_page.dart';
 import 'package:chatme/pages/auth/loginpage.dart';
-import 'package:chatme/pages/homepage.dart';
+import 'package:chatme/pages/finding_people/homepage.dart';
 import 'package:chatme/service/auth_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';

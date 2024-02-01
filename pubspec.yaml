@@ -37,8 +37,19 @@ dependencies:
   flutter:
     sdk: flutter
   shared_preferences: ^2.2.2
-
-
+  google_fonts: ^6.1.0
+  flutter_svg:
+  rxdart:
+  provider:
+  sizer: ^2.0.15
+  flare_flutter:
+  flutter_local_notifications: ^16.3.2
+  geolocator:
+  geocoding:
+  fluttertoast:
+  awesome_ripple_animation:
+  animated_widgets:
+  animated_size_and_fade:
 
 dev_dependencies:
 
@@ -54,9 +65,9 @@ dev_dependencies:
 
 
 flutter_launcher_icons:
-    android: "launcher_icon"
-    ios: true
-    image_path: "assets/images/logo.png"
+  android: true
+  ios: true
+  image_path: "assets/images/fit.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -70,6 +81,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
    assets:
      - assets/images/
+     - assets/svg/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

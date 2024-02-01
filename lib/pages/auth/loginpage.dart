@@ -10,7 +10,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../helper/helper_function.dart';
-import '../homepage.dart';
+import '../finding_people/homepage.dart';
 
 class Loginpage extends StatefulWidget{
   @override

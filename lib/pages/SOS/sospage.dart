@@ -16,66 +16,117 @@ class _SosPageState extends State<SosPage> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.red,
-        title: Text("SOS",style: TextStyle(color: Colors.white),),
-        ),
+        appBar: AppBar(
+
+
+            backgroundColor: Color(0xffc50c2e),
+            title: Text("SOS",style: Theme.of(context).textTheme.displayLarge!.copyWith(color: Colors.white)),
+          ),
+
         floatingActionButton: FloatingActionButton(
+
           child: Text("Call number",textAlign: TextAlign.center,style: TextStyle(color: Colors.white),),
           onPressed: () {
             popUpDialog(context);
           },
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Color(0xffc50c2e),
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-          
-               margin: EdgeInsets.only(left: 85,right: 70,top: 50),
-                  child: Text("Emergency Call Police 🚓",textAlign: TextAlign.center ,style: TextStyle(
-                      fontSize: 32,fontWeight: FontWeight.bold,color: Constants().textColor),)
-              ),
-              SizedBox(height: 50),
-              CircleAvatar(
-              radius: 70,
-               backgroundColor:Colors.redAccent,
-               child: SizedBox(
-                width: 100,
-                 height: 100,
-                     child: IconButton(
-                       onPressed: () async {
-                      await FlutterPhoneDirectCaller.callNumber("8530271197");
-                       },
-                       icon: Icon(CupertinoIcons.phone_fill_arrow_up_right,color: Colors.white,size: 55),
-          
-          
-                     ),
-               )
-                 ),
-              Container(
-                  margin: EdgeInsets.only(left: 85,right: 70,top: 50),
-                  child: Text("Emergency Call Ambulance",textAlign: TextAlign.center ,style: TextStyle(
-                      fontSize: 32,fontWeight: FontWeight.bold,color: Constants().textColor),)
-              ),
-              SizedBox(height: 50),
-              GestureDetector(
-                onTap: () async {
-                  await FlutterPhoneDirectCaller.callNumber("7447762674");
-                },
-                child: CircleAvatar(
-                    radius: 70,
-                    backgroundColor:Colors.green,
-                    child: SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Text("🚑",textAlign: TextAlign.center,style: TextStyle(fontSize: 60),)
+        body: Container(
+         height: 750,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+             Color(0xffc50c2e),Color(0xff791229),Color(0xff4e1226),Color(0xff261928),Color(0xff181925)
+            ])
+
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+
+                    margin: EdgeInsets.only(left: 85,right: 70,top: 50),
+                    child: Text("Emergency Call Police 🚓",textAlign: TextAlign.center ,style:
+                    Theme.of(context).textTheme.headlineMedium!.copyWith(color: Colors.white,fontSize: 32)
                     )
                 ),
-              ),
-          
-            ],
+                SizedBox(height: 50),
+                CircleAvatar(
+                      radius: 70,
+                      backgroundColor:Colors.white,
+                      child: Container(
+                        height: 130,
+                        width: 130,
+                        decoration: BoxDecoration(
+
+                          borderRadius: BorderRadius.circular(70),
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  Color(0xffc50c2e),Color(0xff791229),Color(0xff4e1226),Color(0xff261928),Color(0xff181925)
+                                ])
+
+                        ),
+                        child: SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: IconButton(
+                            onPressed: () async {
+                              await FlutterPhoneDirectCaller.callNumber("8530271197");
+                            },
+                            icon: Icon(CupertinoIcons.phone_fill_arrow_up_right,color: Colors.white,size: 55),
+
+
+                          ),
+                        ),
+                      )
+                  ),
+
+                Container(
+                    margin: EdgeInsets.only(left: 85,right: 70,top: 50),
+                    child: Text("Emergency Call Ambulance",textAlign: TextAlign.center ,style:
+                    Theme.of(context).textTheme.headlineMedium!.copyWith(color: Colors.white,fontSize: 32))
+                ),
+                SizedBox(height: 50),
+                CircleAvatar(
+                    radius: 70,
+                    backgroundColor:Colors.white,
+                    child: Container(
+                      height: 130,
+                      width: 130,
+                      decoration: BoxDecoration(
+
+                          borderRadius: BorderRadius.circular(70),
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Color(0xffc50c2e),Color(0xff791229),Color(0xff4e1226),Color(0xff261928),Color(0xff181925)
+                              ])
+
+                      ),
+                      child: SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: IconButton(
+                          onPressed: () async {
+                            await FlutterPhoneDirectCaller.callNumber("8208443163");
+                          },
+                          icon: Icon(Icons.directions_bus_filled,color: Colors.white,size: 55),
+
+
+                        ),
+                      ),
+                    )
+                ),
+
+
+
+              ],
+            ),
           ),
         )
 
@@ -141,9 +192,8 @@ class _SosPageState extends State<SosPage> {
               )
             ],
           );
-        });
+        }
+    );
   }
 
 }
-
-

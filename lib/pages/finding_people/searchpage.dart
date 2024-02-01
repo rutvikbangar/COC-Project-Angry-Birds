@@ -1,5 +1,5 @@
 import 'package:chatme/helper/helper_function.dart';
-import 'package:chatme/pages/chatpage.dart';
+import 'package:chatme/pages/finding_people/chatpage.dart';
 import 'package:chatme/service/database_service.dart';
 import 'package:chatme/widgets/widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
