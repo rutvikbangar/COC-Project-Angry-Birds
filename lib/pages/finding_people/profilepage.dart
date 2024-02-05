@@ -49,34 +49,34 @@ class _ProfilePageState extends State<ProfilePage> {
             leading: Icon(Icons.person),
             title: Text("Profile",style: TextStyle(color: Colors.black),),
           ),
-          ListTile(
-            onTap: () async {
-              showDialog(
-                  context: context,
-                  builder: (context){
-                    return AlertDialog(
-                      title: Text("Logout"),
-                      content: Text("Are you sure you want to logout"),
-                      actions: [
-                        IconButton(onPressed:() {Navigator.pop(context);},
-                            icon: Icon(Icons.cancel,color: Colors.red)
-                        ),
-                        IconButton(onPressed:() async {
-                          await authservice.signOut();
-                          Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => Loginpage()),
-                                  (route) => false);
-                        },
-                            icon: Icon(Icons.done,color: Colors.green,)
-                        ),
-                      ],
-                    );
-                  });
-
-            },
-            contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
-            leading: Icon(Icons.exit_to_app),
-            title: Text("Logout",style: TextStyle(color: Colors.black),),
-          )
+          // ListTile(
+          //   onTap: () async {
+          //     showDialog(
+          //         context: context,
+          //         builder: (context){
+          //           return AlertDialog(
+          //             title: Text("Logout"),
+          //             content: Text("Are you sure you want to logout"),
+          //             actions: [
+          //               IconButton(onPressed:() {Navigator.pop(context);},
+          //                   icon: Icon(Icons.cancel,color: Colors.red)
+          //               ),
+          //               IconButton(onPressed:() async {
+          //                 await authservice.signOut();
+          //                 Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => Loginpage()),
+          //                         (route) => false);
+          //               },
+          //                   icon: Icon(Icons.done,color: Colors.green,)
+          //               ),
+          //             ],
+          //           );
+          //         });
+          //
+          //   },
+          //   contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
+          //   leading: Icon(Icons.exit_to_app),
+          //   title: Text("Logout",style: TextStyle(color: Colors.black),),
+          // )
         ],
       ),),
 

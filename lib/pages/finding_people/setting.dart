@@ -1,7 +1,9 @@
 import 'package:chatme/master_page.dart';
 import 'package:chatme/pages/finding_people/homepage.dart';
 import 'package:chatme/pages/finding_people/profilepage.dart';
+import 'package:chatme/pages/locator/locatondisplay.dart';
 import 'package:chatme/widgets/widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../helper/helper_function.dart';
@@ -134,7 +136,6 @@ class _SettingPageState extends State<SettingPage> {
             IconButton(
                 onPressed: (){nextScreen(context, MasterPage());},
                 icon: Icon(Icons.home,size:30,color:Color(0xFFA095C1) )),
-
             IconButton(
                 onPressed: (){},
                 icon : Icon(Icons.notifications,size: 30,color: Color(0xFFA095C1))),

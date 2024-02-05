@@ -96,47 +96,49 @@ class _NewEntryPageState extends State<NewEntryPage> {
               StreamBuilder<MedicineType>(
                 stream: _newEntryBloc!.selectedMedicineType,
                 builder: (context, snapshot) {
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Medicine_Type_Column(
-                          medicine_type: MedicineType.pill,
-                          name: "Pill",
-                          iconvalue: "assets/svg/pill.png",
-                          isSelected: snapshot.data == MedicineType.pill
-                              ? true
-                              : false),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Medicine_Type_Column(
-                          medicine_type: MedicineType.bottle,
-                          name: "Bottle",
-                          iconvalue: "assets/svg/bottle2.png",
-                          isSelected: snapshot.data == MedicineType.bottle
-                              ? true
-                              : false),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Medicine_Type_Column(
-                          medicine_type: MedicineType.syringe,
-                          name: "Syringe",
-                          iconvalue: "assets/svg/syringe3.png",
-                          isSelected: snapshot.data == MedicineType.syringe
-                              ? true
-                              : false),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Medicine_Type_Column(
-                          medicine_type: MedicineType.tablet,
-                          name: "Tablet",
-                          iconvalue: "assets/svg/tablet.png",
-                          isSelected: snapshot.data == MedicineType.tablet
-                              ? true
-                              : false),
-                    ],
+                  return SingleChildScrollView(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Medicine_Type_Column(
+                            medicine_type: MedicineType.pill,
+                            name: "Pill",
+                            iconvalue: "assets/svg/pill.png",
+                            isSelected: snapshot.data == MedicineType.pill
+                                ? true
+                                : false),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Medicine_Type_Column(
+                            medicine_type: MedicineType.bottle,
+                            name: "Bottle",
+                            iconvalue: "assets/svg/bottle2.png",
+                            isSelected: snapshot.data == MedicineType.bottle
+                                ? true
+                                : false),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Medicine_Type_Column(
+                            medicine_type: MedicineType.syringe,
+                            name: "Syringe",
+                            iconvalue: "assets/svg/syringe3.png",
+                            isSelected: snapshot.data == MedicineType.syringe
+                                ? true
+                                : false),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Medicine_Type_Column(
+                            medicine_type: MedicineType.tablet,
+                            name: "Tablet",
+                            iconvalue: "assets/svg/tablet.png",
+                            isSelected: snapshot.data == MedicineType.tablet
+                                ? true
+                                : false),
+                      ],
+                    ),
                   );
                 },
               ),

@@ -1,6 +1,7 @@
 import 'package:chatme/pages/Notes/Notes_mainpage.dart';
 import 'package:chatme/pages/SOS/sospage.dart';
 import 'package:chatme/pages/finding_people/homepage.dart';
+import 'package:chatme/pages/locator/locatondisplay.dart';
 import 'package:chatme/pages/locator/locator_main.dart';
 import 'package:chatme/pages/medication/Medication_mainpage.dart';
 import 'package:chatme/pages/finding_people/setting.dart';
@@ -9,6 +10,7 @@ import 'package:chatme/service/database_service.dart';
 import 'package:chatme/shared/constant.dart';
 import 'package:chatme/widgets/widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'helper/helper_function.dart';
@@ -247,10 +249,14 @@ class _MasterPageState extends State<MasterPage> {
                   onPressed: () {},
                   icon:
                       Icon(Icons.home, size: 30, color: Constants().textColor)),
+
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   icon: Icon(Icons.notifications,
                       size: 30, color: Color(0xFFA095C1))),
+
               IconButton(
                   onPressed: () {
                     nextScreen(context, SettingPage());
@@ -259,7 +265,8 @@ class _MasterPageState extends State<MasterPage> {
                     Icons.settings,
                     size: 30,
                     color: Color(0xFFA095C1),
-                  ))
+                  )),
+
             ],
           ),
         ),

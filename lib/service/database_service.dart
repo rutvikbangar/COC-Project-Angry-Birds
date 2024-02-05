@@ -19,6 +19,8 @@ Future updateUserData(String fullname,String email) async {
     "profilepic" : "",
     "uid" : uid,
     "notes" : [],
+    //LOCATION
+    "location" : [],
   });
 
 }
@@ -37,6 +39,18 @@ Future gettingUserData(String email) async {
  // getting user notes
   getUserNotes() async {
     return userCollection.doc(uid).snapshots();
+  }
+  //update Location
+  getUserLocation() async {
+    return userCollection.doc(uid).snapshots();
+  }
+
+  //update location
+  Future updateLocation(String id,String coordinates,String address) async {
+  DocumentReference userDocumentReference = userCollection.doc(uid);
+  return await userDocumentReference.update({
+    "location" : FieldValue.arrayUnion(["${id}_${address}_${coordinates}"])
+  });
   }
 
 
@@ -174,6 +188,25 @@ Future toggleGroupJoin(String groupId,String userName,String groupName) async {
     if(notes.contains("${notesid}_${title}_$detailnotes")){
       await userDocumentReference.update({
         "notes" : FieldValue.arrayRemove(["${notesid}_${title}_$detailnotes"])
+      });
+
+    }
+
+
+
+  }
+
+  Future deletelocationfromuser(String id,String address,String coordinates ) async{
+    DocumentReference userDocumentReference = userCollection.doc(uid);
+
+
+
+    DocumentSnapshot documentSnapshot = await userDocumentReference.get();
+    List<dynamic> notes = await documentSnapshot['location'];
+
+    if(notes.contains("${id}_${address}_${coordinates}")){
+      await userDocumentReference.update({
+        "location" : FieldValue.arrayRemove(["${id}_${address}_${coordinates}"])
       });
 
     }

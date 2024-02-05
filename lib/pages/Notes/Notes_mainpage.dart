@@ -38,10 +38,10 @@ class _NotesPageState extends State<NotesPage> {
     await DatabaseService(uid: FirebaseAuth.instance.currentUser!.uid)
         .getUserNotes()
         .then((snapshot) {
-      setState(() {
-        notes = snapshot;
-      });
+        setState(() {
+      notes = snapshot;
     });
+  });
 
     }
 
@@ -193,7 +193,7 @@ class _NotesPageState extends State<NotesPage> {
                     return NotesTile(
                       notesid: getId(snapshot.data['notes'][reverseIndex]),
                         title: getName(snapshot.data['notes'][reverseIndex]),
-                        detailnotes: getdetail(snapshot.data['notes'][reverseIndex])   ,
+                        detailnotes: getdetail(snapshot.data['notes'][reverseIndex]) ,
 
                     );
                   }
