@@ -32,7 +32,7 @@ class _SosPageState extends State<SosPage> {
           backgroundColor: Color(0xffc50c2e),
         ),
         body: Container(
-         height: 750,
+         height: 800,
           decoration: BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topCenter,

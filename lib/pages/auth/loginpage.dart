@@ -35,14 +35,14 @@ class _LoginpageState extends State<Loginpage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text("ChatMe",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,
+                Text("ElderEase",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,
                     color: Color(0xFF432C81)),),
-                SizedBox(height: 10),
-                 Text("Login now to see what they are takling!!!",style: TextStyle(
+                SizedBox(height: 8),
+                 Text("Keeping Seniors Connected...",style: TextStyle(
                   fontWeight: FontWeight.bold,fontSize: 15,color:Color(0xFF432C81),
                  ),
                 ),
-                Image.asset("assets/images/loginp.jpg"),
+                Image.asset("assets/images/pp.gif"),
                 SizedBox(height: 35),
                 TextFormField(
                   decoration: textInputDecoration.copyWith(

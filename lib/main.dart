@@ -1,10 +1,8 @@
 import 'package:chatme/helper/helper_function.dart';
 import 'package:chatme/master_page.dart';
 import 'package:chatme/pages/auth/loginpage.dart';
-import 'package:chatme/pages/finding_people/homepage.dart';
 import 'package:chatme/pages/medication/Medication_mainpage.dart';
 import 'package:chatme/pages/medication/global_block.dart';
-import 'package:chatme/pages/medication/new_entry_bloc.dart';
 import 'package:chatme/shared/constant.dart';
 import 'package:chatme/widgets/widget.dart';
 import 'package:firebase_core/firebase_core.dart';

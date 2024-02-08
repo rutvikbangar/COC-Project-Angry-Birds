@@ -50,6 +50,8 @@ dependencies:
   awesome_ripple_animation:
   animated_widgets:
   animated_size_and_fade:
+  get: ^4.6.6
+  page_transition: 
 
 dev_dependencies:
 

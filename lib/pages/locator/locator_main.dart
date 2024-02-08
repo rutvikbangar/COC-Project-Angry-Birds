@@ -105,17 +105,28 @@ class _LocatorMainPageState extends State<LocatorMainPage> {
         centerTitle: true,
         title: Text(
           "Locator",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black),
         ),
-        backgroundColor: Constants().primaryColor,
+        backgroundColor: Color(0xffE0F4FF),
         actions: [
           IconButton(onPressed: () {
             nextScreen(context, LocationDisplay());
           },
-              icon: Icon(CupertinoIcons.map, color: Colors.white,))
+              icon: Icon(CupertinoIcons.map, color: Colors.black,))
         ],
       ),
       body: Container(
+        decoration: BoxDecoration(
+           gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+            Color(0xffE0F4FF),
+            Color(0xff87C4FF),
+            Color(0xff39A7FF),
+            Color(0xffFFEED9)
+          ])
+        ),
         child: Column(
           children: [
             SizedBox(
@@ -202,25 +213,39 @@ class _LocatorMainPageState extends State<LocatorMainPage> {
           ],
         ),
       ),
-      bottomSheet: Padding(
-        padding: const EdgeInsets.only(bottom: 20.0),
-        child: SizedBox(
-          height: 50,
-          width: 300,
-          child: TextButton(
-            style: TextButton.styleFrom(
-              backgroundColor: Constants().primaryColor,
-            ),
-            onPressed: () {
-              _determinePosition();
-            },
-            child: Text(
-              "Locate me",
-              textAlign: TextAlign.center,
-              style: Theme.of(context)
-                  .textTheme
-                  .displayLarge!
-                  .copyWith(color: Colors.white),
+      bottomSheet: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+           
+            Colors.blue.shade100,
+            Color(0xffFFEED9)
+          ])
+          
+
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 20.0),
+          child: SizedBox(
+            height: 50,
+            width: 300,
+            child: TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Constants().primaryColor,
+              ),
+              onPressed: () {
+                _determinePosition();
+              },
+              child: Text(
+                "Locate me",
+                textAlign: TextAlign.center,
+                style: Theme.of(context)
+                    .textTheme
+                    .displayLarge!
+                    .copyWith(color: Colors.white),
+              ),
             ),
           ),
         ),
