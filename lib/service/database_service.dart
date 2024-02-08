@@ -7,6 +7,8 @@ class DatabaseService {
   //reference of our collection
   final CollectionReference userCollection = FirebaseFirestore.instance.collection("users");
   final CollectionReference groupsCollection = FirebaseFirestore.instance.collection("groups");
+  final CollectionReference notesCollection = FirebaseFirestore.instance.collection("notes");
+
 
   //update the userdata
 Future updateUserData(String fullname,String email) async {
@@ -16,9 +18,13 @@ Future updateUserData(String fullname,String email) async {
     "groups" : [],
     "profilepic" : "",
     "uid" : uid,
-
+    "notes" : [],
+    //LOCATION
+    "location" : [],
   });
+
 }
+
 //getting user data
 Future gettingUserData(String email) async {
   QuerySnapshot snapshot = await userCollection.where("email", isEqualTo: email).get();
@@ -29,9 +35,48 @@ Future gettingUserData(String email) async {
   return userCollection.doc(uid).snapshots();
  }
 
- // Creating a group
 
- Future createGroup(String userName,String id, String groupName) async {
+ // getting user notes
+  getUserNotes() async {
+    return userCollection.doc(uid).snapshots();
+  }
+  //update Location
+  getUserLocation() async {
+    return userCollection.doc(uid).snapshots();
+  }
+
+  //update location
+  Future updateLocation(String id,String coordinates,String address) async {
+  DocumentReference userDocumentReference = userCollection.doc(uid);
+  return await userDocumentReference.update({
+    "location" : FieldValue.arrayUnion(["${id}_${address}_${coordinates}"])
+  });
+  }
+
+
+ //Creating a note
+ Future createNotes(String userName,String id, String title,String detailnotes) async {
+  DocumentReference notesDocumentReference = await notesCollection.add({
+    "title" : title,
+    "notesowner" : "${id}_$userName",
+    "detailnotes" : detailnotes,
+    "notesid" : ""
+  });
+  await notesDocumentReference.update({
+    "notesid" : notesDocumentReference.id,
+  });
+  //updating notes in user
+  DocumentReference userDocumentReference = userCollection.doc(uid);
+  return await userDocumentReference.update({
+    "notes" : FieldValue.arrayUnion(["${notesDocumentReference.id}_${title}_$detailnotes"])
+  });
+
+
+ }
+
+
+ // Creating a group
+  Future createGroup(String userName,String id, String groupName) async {
   DocumentReference groupDocumentReference = await groupsCollection.add({
     "groupName" : groupName,
     "groupIcon" : "",
@@ -120,6 +165,56 @@ Future toggleGroupJoin(String groupId,String userName,String groupName) async {
 
   });
   }
+
+
+
+
+  // deleting notes
+
+
+  Future deletenotesfromnotes(String id) async {
+  FirebaseFirestore.instance.collection("notes").doc(id).delete();
+
+  }
+
+  Future deletenotesfromuser(String notesid,String title,String detailnotes ) async{
+    DocumentReference userDocumentReference = userCollection.doc(uid);
+
+
+
+    DocumentSnapshot documentSnapshot = await userDocumentReference.get();
+    List<dynamic> notes = await documentSnapshot['notes'];
+
+    if(notes.contains("${notesid}_${title}_$detailnotes")){
+      await userDocumentReference.update({
+        "notes" : FieldValue.arrayRemove(["${notesid}_${title}_$detailnotes"])
+      });
+
+    }
+
+
+
+  }
+
+  Future deletelocationfromuser(String id,String address,String coordinates ) async{
+    DocumentReference userDocumentReference = userCollection.doc(uid);
+
+
+
+    DocumentSnapshot documentSnapshot = await userDocumentReference.get();
+    List<dynamic> notes = await documentSnapshot['location'];
+
+    if(notes.contains("${id}_${address}_${coordinates}")){
+      await userDocumentReference.update({
+        "location" : FieldValue.arrayRemove(["${id}_${address}_${coordinates}"])
+      });
+
+    }
+
+
+
+  }
+
 
 }
 

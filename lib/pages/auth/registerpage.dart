@@ -1,7 +1,7 @@
 import 'package:chatme/helper/helper_function.dart';
 import 'package:chatme/master_page.dart';
 import 'package:chatme/pages/auth/loginpage.dart';
-import 'package:chatme/pages/homepage.dart';
+import 'package:chatme/pages/finding_people/homepage.dart';
 import 'package:chatme/service/auth_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
@@ -34,13 +34,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text("ChatMe",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Color(0xFF432C81)),),
+                  Text("ElderEase",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Color(0xFF432C81)),),
                   SizedBox(height: 10),
                   const Text("Create your Account now to chat and Explore",style: TextStyle(
                       fontWeight: FontWeight.bold,fontSize: 15,color:Color(0xFF432C81)),
                   ),
-                  Image.asset("assets/images/loginp.jpg"),
-                  SizedBox(height: 15),
+                  SizedBox(height: 50,),
+                  Image.asset("assets/images/new_login.gif"),
+                  SizedBox(height: 100),
                   TextFormField(
                     decoration: textInputDecoration.copyWith(
                       labelText:"Full Name",

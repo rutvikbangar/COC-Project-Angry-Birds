@@ -32,11 +32,26 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_auth: ^4.14.1
   firebase_core: ^2.23.0
+  flutter_phone_direct_caller: ^2.1.0
+  url_launcher: ^6.0.17
   flutter:
     sdk: flutter
   shared_preferences: ^2.2.2
-
-
+  google_fonts: ^6.1.0
+  flutter_svg:
+  rxdart:
+  provider:
+  sizer: ^2.0.15
+  flare_flutter:
+  flutter_local_notifications: ^16.3.2
+  geolocator:
+  geocoding:
+  fluttertoast:
+  awesome_ripple_animation:
+  animated_widgets:
+  animated_size_and_fade:
+  get: ^4.6.6
+  page_transition: 
 
 dev_dependencies:
 
@@ -50,10 +65,11 @@ dev_dependencies:
     sdk: flutter
   flutter_launcher_icons: "^0.13.1"
 
+
 flutter_launcher_icons:
-    android: "launcher_icon"
-    ios: true
-    image_path: "assets/images/logo.png"
+  android: "launcher icons"
+  ios: true
+  image_path: "assets/images/main.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -67,6 +83,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
    assets:
      - assets/images/
+     - assets/svg/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
